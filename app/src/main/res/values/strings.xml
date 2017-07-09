@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="no_todos">You don\'t have any todos</string>
+    <string name="title_activity_add_todo">AddTodoActivity</string>
+    <string name="remind_date_and_time">Reminder set for %1$s, %2$s %3$s</string>
+    <string name="date_error_check_again">The date you entered is in the past.</string>
+    <string name="todo_error">Please enter a Todo</string>
+    <string name="todo_reminder_error">My time-machine is a bit rusty</string>
+
+    <string-array name="priority">
+        <item>Priority 4</item>
+        <item>Priority 3</item>
+        <item>Priority 2</item>
+        <item>Priority 1</item>
+    </string-array>
+
+    <string-array name="project">
+        <item>Inbox</item>
+        <item>Personal</item>
+        <item>Shopping</item>
+        <item>Work</item>
+        <item>Errands</item>
+        <item>Movies to Watch</item>
+    </string-array>
+</resources>

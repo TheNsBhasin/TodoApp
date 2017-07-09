@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="in.codingninjas.todoapp.AddTodoActivity"
+    tools:showIn="@layout/activity_add_todo">
+
+    <LinearLayout
+        android:id="@+id/todoTaskLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="72dp"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:textColorHint="@color/colorAccent"
+            app:hintTextAppearance="@style/FloatingLabelTextAppearance">
+
+            <EditText
+                android:id="@+id/todoTitleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|bottom"
+                android:hint="Task"
+                android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+                android:maxLines="2"
+                android:textColor="@color/colorIcons"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textSize="24sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/todoProjectTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="72dp"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:textColorHint="@color/colorAccent"
+            app:hintTextAppearance="@style/FloatingLabelTextAppearance">
+
+            <EditText
+                android:id="@+id/todoProjectEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusableInTouchMode="false"
+                android:gravity="start|bottom"
+                android:hint="Project"
+                android:inputType="none"
+                android:maxLines="2"
+                android:padding="8dp"
+                android:text="Inbox"
+                android:textColor="@color/colorIcons"
+                android:textColorHint="@color/colorSecondaryText"
+                android:textSize="16sp" />
+
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/todoProperyLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/todoDateConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+
+            <TextView
+                android:id="@+id/todoDateTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Due Date"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/todoDateTextView"
+                app:layout_constraintLeft_toRightOf="@+id/todoDateImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/todoDateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="32dp"
+                android:text="Today"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toRightOf="@+id/todoDateImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="36dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="36dp" />
+
+            <ImageView
+                android:id="@+id/todoDateImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/todoPriorityConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+
+            <TextView
+                android:id="@+id/todoPriorityTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Priority"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/todoPriorityTextView"
+                app:layout_constraintLeft_toRightOf="@+id/todoPriorityImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/todoPriorityTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="32dp"
+                android:text="Priority 4"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toRightOf="@+id/todoPriorityImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="36dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="36dp" />
+
+            <ImageView
+                android:id="@+id/todoPriorityImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_flag_black_24dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/todoLabelConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+
+            <TextView
+                android:id="@+id/todoLabelTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Labels"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/todoLabelTextView"
+                app:layout_constraintLeft_toRightOf="@+id/todoLabelImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/todoLabelTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="32dp"
+                android:text="No Label"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toRightOf="@+id/todoLabelImageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="36dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="36dp" />
+
+            <ImageView
+                android:id="@+id/todoLabelImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_label_outline_black_24dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/todoReminderConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+
+            <TextView
+                android:id="@+id/todoReminderTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="Reminders"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/todoReminderTextView"
+                app:layout_constraintLeft_toRightOf="@+id/todoReminderImageView"
+                app:layout_constraintRight_toLeftOf="@+id/todoReminderSwitchCombat"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/todoReminderTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="32dp"
+                android:text="No reminders"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/todoReminderImageView"
+                app:layout_constraintRight_toLeftOf="@+id/todoReminderSwitchCombat"
+                app:layout_constraintTop_toTopOf="@+id/guideline4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="36dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="36dp" />
+
+            <ImageView
+                android:id="@+id/todoReminderImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_alarm_black_24dp" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/todoReminderSwitchCombat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>
