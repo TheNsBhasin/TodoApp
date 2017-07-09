@@ -1,5 +1,7 @@
 # TodoApp
 Note keeping app
+
+# Screenshots
 ![Alt text](/Screenshots/screenshot1.PNG?raw=true "Empty Todo list")
 ![Alt text](/Screenshots/screenshot2.PNG?raw=true "Add Todo activity")
 ![Alt text](/Screenshots/screenshot3.PNG?raw=true "Add Todo activity")
