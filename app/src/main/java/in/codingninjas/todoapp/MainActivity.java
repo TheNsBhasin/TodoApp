@@ -47,6 +47,7 @@ import static in.codingninjas.todoapp.TodoOpenHelper.TODO_TITLE;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private NavigationView navigationView;
+    private Toolbar toolbar;
     private ArrayList<Todo> todoArrayList = new ArrayList<>();
     private TodoRecyclerViewAdapter todoRecyclerViewAdapter;
     public static CoordinatorLayout todoCoordinatorLayout;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         todoOpenHelper = TodoOpenHelper.getInstance(MainActivity.this);
@@ -198,11 +199,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showInbox() {
+        toolbar.setTitle("Inbox");
         navigationView.getMenu().getItem(0).setChecked(true);
         updateTodoList();
     }
 
     private void showToday() {
+        toolbar.setTitle("Today");
         navigationView.getMenu().getItem(1).setChecked(true);
         todoArrayList.clear();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMM, yyyy h:mm a", Locale.getDefault());
@@ -238,6 +241,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showNext7Days() {
+        toolbar.setTitle("Next 7 days");
         navigationView.getMenu().getItem(2).setChecked(true);
         todoArrayList.clear();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMM, yyyy h:mm a", Locale.getDefault());
@@ -301,6 +305,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showCategory(String selectedCategory) {
+        toolbar.setTitle(selectedCategory);
         navigationView.getMenu().getItem(3).setChecked(true);
         todoArrayList.clear();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("d MMM, yyyy h:mm a", Locale.getDefault());
@@ -371,7 +376,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inbox) {
-            updateTodoList();
+            showInbox();
         } else if (id == R.id.nav_today) {
             showToday();
         } else if (id == R.id.nav_next7days) {
